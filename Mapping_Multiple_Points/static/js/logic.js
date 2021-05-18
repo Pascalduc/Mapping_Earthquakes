@@ -2,24 +2,30 @@
 console.log("working");
 
 // Create the map object with a center and zoom level.
-let map = L.map('mapid').setView([56.4, -102.2], 4);
+let map = L.map('mapid').setView([47.4, -98.2], 4);
 
-//  Add a Pin marker to the map for Los Angeles, California.
-// let marker = L.marker([34.0522, -118.2437]).addTo(map);
+// Get data from cities.js
+let cityData = cities;
 
-//  add a circle marker in meters
-let circle = L.circle([34.0522, -118.2437], {
-  radius: 300,
-  color: 'lightyellow',
-  fillColor: 'lightyellow'
-  }).addTo(map);
+
+// Loop through the cities array and create one marker for each city.
+cityData.forEach(function(city) {
+  console.log(city)
+  L.circleMarker(city.location, {
+    radius: (city.population-200000)/100000,
+    color: 'orange',
+    weight: 10
+  })
+.bindPopup("<h2>" + city.city + ", " + city.state + "</h2> <hr> <h3>Population " + city.population.toLocaleString() + "</h3>")
+.addTo(map);
+});
 
 // add a circleMarker alternative in pixel (resize with zoom)
-  L.circleMarker([37.3541, -121.9552], {
-  radius: 30,
-  color: 'black',
-  fillColor: '#ffffa1'
-  }).addTo(map);
+  // L.circleMarker([37.3541, -121.9552], {
+  // radius: 30,
+  // color: 'black',
+  // fillColor: '#ffffa1'
+  // }).addTo(map);
 
 // We create the tile layer that will be the background of our map.
 let streets = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/dark-v10/tiles/{z}/{x}/{y}?access_token={accessToken}', {
@@ -33,4 +39,3 @@ accessToken: API_KEY
 streets.addTo(map);
 
 
-// mapbox://styles/mapbox/dark-v10
