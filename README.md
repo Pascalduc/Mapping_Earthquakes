@@ -11,7 +11,7 @@ The purpose of this project was to build a map using `Mapbox` and `Leaflet` with
 
 •	Our final interactive map looks like the following:
 
-![EQmap](Earthquake_Challenge/Resources/EQmap.png)
+![EQmap](Resources/EQmap.png)
 
 ## Summary:
 •	In summary, `Leaflet` is very useful to add data to a map in Javascript but because we need the API key to load and it’s not safe to upload the key, then we cannot render our webpage using GitHub .
