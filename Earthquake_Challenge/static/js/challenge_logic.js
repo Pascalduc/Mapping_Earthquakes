@@ -222,7 +222,7 @@ legend.onAdd = function() {
     weight: 1
 }
   
-
+  // Retrieve the techtonic place data
   d3.json("https://raw.githubusercontent.com/fraxen/tectonicplates/master/GeoJSON/PB2002_boundaries.json")
   .then(function(data) {
     console.log(data);
