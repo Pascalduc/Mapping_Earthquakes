@@ -2,7 +2,7 @@
 Module 13
 
 ## Overview of the project:
-The purpose of this project was to build a map using `Mapbox` and `Leaflet` with 3 layers then add a marker for each earthquake where the radius of the circle is dependent on magnitude.
+The purpose of this project was to build a map using `Mapbox` and `Leaflet` with 3 layers then add tectonic plates and markers for each earthquake where the radius of the circle is dependent on magnitude.
 
 ## Results:
 •	We first create map layers with `L.titleLayer` and the URL from the documentation making sure to link a configuration file containing the API key. We then create a map object with default settings for when the page is loaded. Next we create a variable for `baseMap` and each `overlay`, which are added to the map using the `L.control.layers(baseMaps, overlays).addTo(map);` function.
